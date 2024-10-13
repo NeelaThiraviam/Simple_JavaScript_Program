@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Table</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <link rel="stylesheet" href="task4.css">
+
+</head>
+<body>
+<h1>Tabulation</h1>
+
+<button onclick="showDateTime()">Click</button>
+
+<script>
+  var jsonData = [
+    { "Name": "Neelan", "Age": 25, "DateOfBirth": "03/02/2001" },
+    { "Name": "Subin", "Age": 26, "DateOfBirth": "09/02/2002" }
+  ];
+
+  function renderTable(data) {
+    var table = document.createElement('table');
+
+    var headerRow = table.insertRow(0);
+    for (var key in data[0]) {
+      var th = document.createElement('th');
+      th.textContent = key;
+      headerRow.appendChild(th);
+    }
+
+    data.forEach(function (item) {
+      var row = table.insertRow();
+      for (var key in item) {
+        var cell = row.insertCell();
+        cell.textContent = item[key];
+      }
+    });
+
+    document.body.appendChild(table);
+  }
+
+  renderTable(jsonData);
+</script>
+
+<script>
+    function showDateTime(){
+      var currentDateTime = moment().format("DD-MM-YYYY HH:mm");
+      document.write(currentDateTime);
+    }
+  </script>
+
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+body {
+    background-image: url('wood.webp');
+}
+table {
+border-collapse: collapse;
+width: 50%;
+margin:20px auto;
+}
+th, td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+color: white;
+}
+h1 {
+text-align: center;
+color: white;
+}
+button {
+padding: 10px 20px;
+font-size: 16px;
+margin-left: 630px;
+margin-top: 10px;
+cursor: pointer;
+}
