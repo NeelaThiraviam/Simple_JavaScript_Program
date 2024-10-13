@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculation</title>
+</head>
+<body style="color: black;">
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        background-image: url('calculator.jfif');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+    }
+    </style>
+    <center>
+    <h1>Mathematical Calculation</h1>
+    
+        <form>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td> <input type="text" placeholder="Enter your Name"></td>
+            </tr>
+            <tr>
+                <td>Number1:</td>
+                <td> <input type="number" id="Number1" placeholder="Enter the Num"></td>
+            </tr>
+            <tr>
+                <td>Number2:</td>
+                <td> <input type="number" id="Number2" placeholder="Enter the Num"></td>
+            </tr>
+            <tr>
+        </table>
+        <table>
+                <td></td> <td><button onclick="addition()">Sum</button></td>
+        </table>
+        </form>
+        
+        <script>
+                let a = document.getElementById("Number1");
+                let b = document.getElementById("Number2");
+                function addition() {
+                    if(((a.value>99)||(a.value<0))||((b.value>99)||(b.value<0))){
+                        alert("Enter a valid number");
+                        if((a.value==null)||(b.value==null)){
+                            alert("Number field is Null");
+                        }
+                    } else {
+                        let sum = parseInt(a.value) + parseInt(b.value);
+                    document.write("The Sum of the numbers is "+sum); 
+                    }
+                }
+                
+        </script>
+        </center>
+    </body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculation</title>
+</head>
+<body style="color: black;">
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('calculator.jfif');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+#things {
+    font-family: 'Arial', sans-serif;
+    color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+</style>
+<center>
+    <form>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td> <input type="text" id="name" placeholder="Enter your Name"></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td> <input type="number" id="age" placeholder="Enter the Num"></td>
+        </tr>
+        <tr>
+            <td>Mobile:</td>
+            <td> <input type="number" id="mobile" placeholder="Enter the Num"></td>
+        </tr>
+        <tr>
+    </table>
+    <table>
+            <td></td> <td><button onclick="showJSON()">Save</button></td>
+    </table>
+    </form>
+
+    <p id="things" style="color: black;"></p>
+    
+    <script>
+            let a = document.getElementById("Number1");
+            let b = document.getElementById("Number2");
+            function addition() {
+                if(((a.value>99)||(a.value<0))||((b.value>99)||(b.value<0))){
+                    alert("Enter a valid number");
+                    if((a.value==null)||(b.value==null)){
+                        alert("Number field is Null");
+                    }
+                } else {
+                    let sum = parseInt(a.value) + parseInt(b.value);
+                    document.write("The Sum of the numbers is "+sum); 
+                }
+            }
+            const myTimeout = setTimeout(myAlert, 5000);
+            function myAlert(){
+            document.getElementById("things").innerHTML = "Please Enter Correct information"
+            
+        }
+document.addEventListener('DOMContentLoaded', function () {
+      var textElement = document.getElementById('things');
+      setInterval(function () {
+        textElement.style.color = (textElement.style.color == 'red') ? 'green' : 'red';
+      }, 3000);
+    });
+
+    function showJSON() {
+      var name = document.getElementById('name').value;
+      var age = document.getElementById('age').value;
+      var mobile = document.getElementById('mobile').value;
+
+      var data = {
+        name: name,
+        age: age,
+        mobile: mobile
+      };
+
+      document.write(JSON.stringify(data));
+    }
+            
+    </script>
+    </center>
+</body>
+</html>
